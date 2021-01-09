@@ -1,0 +1,499 @@
+
+
+create table customer1(
+  cust_id int not null,
+  name varchar(25) not null,
+   dop date,
+  nos varchar(30),
+   status varchar(5) default 'N',
+       primary key(cust_id) 
+  );
+
+create table fine(cust_id int not null, dat date, amt int default 0, foreign key(cust_id) references customer1(cust_id) on delete cascade);
+
+
+
+insert into customer1 values(1, 'Aboli', '2000-12-12' , 'B2B', 'N');
+insert into customer1 values(2, 'Anu', '2001-12-12' , 'B2C', 'N');
+insert into customer1 values(3, 'Raj', '2002-12-12' , 'B2B', 'N');
+insert into customer1 values(4, 'Kiara', '2003-12-12' , 'B2C', 'N');
+insert into customer1 values(5, 'Malcolm', '2004-12-12' , 'NVN', 'N');
+insert into customer1 values(6, 'Kianu', '2005-12-12' , 'AAA', 'N');
+insert into customer1 values(7, 'Sarah', '2006-12-12' , 'NVN', 'N');
+insert into customer1 values(8, 'Neo', '2007-12-12' , 'AAA', 'N');
+insert into customer1 values(9, 'Ritonavir', '2008-12-12' , 'AAA', 'N');
+insert into customer1 values(10, 'Sakshi', '2009-12-12' , 'AAA', 'N');
+
+insert into fine values(1, '2015-10-10', 100);
+insert into fine values(1, '2017-10-10', 1000);
+insert into fine values(2, '2015-09-10', 100);
+insert into fine values(3, '2015-10-10', 200);
+insert into fine values(4, '2015-10-10', 300);
+insert into fine values(5, '2015-10-10', 400);
+insert into fine values(1, '2015-10-10', 500);
+insert into fine values(5, '2015-10-10', 600);
+insert into fine values(7, '2015-10-10', 700);
+insert into fine values(8, '2015-10-10', 800);
+
+
+
+
+
+
+
+
+
+delimiter $$
+create procedure finecalc1(cid int, cschema VARCHAR(20))
+     begin
+     declare p_date date;
+     declare f_amt int;
+     declare diff int; 
+     declare exit handler for sqlexception select 'Table not found';
+     select dop into p_date from customer1 where cust_id=cid and nos = cschema;
+     select datediff(curdate(), p_date) into diff;
+     if (diff>=15 and diff<=30) then
+     set f_amt=diff*5;
+     insert into fine values (cid,CURDATE(),f_amt);
+     elseif (diff>30) then
+     set f_amt=diff*50;
+     insert into fine values (cid,CURDATE(),f_amt);
+     end if;
+     update customer1 set status='P' where cust_id=cid and nos = cschema;
+     end;
+      $$
+delimiter ;
+
+--------------------------------------
+ASSMT 6
+--------------------------------------
+
+
+#This needs to be done in pl/sql (Oracle database)
+
+
+
+create table O_EmpId( id INTEGER not null, name varchar(25) not null);
+create table N_EmpId( id INTEGER not null, name varchar(25) not null);
+
+insert into O_EmpId (id, name) values (1,'Aboli');
+insert into O_EmpId(id, name) values (2,'Sarah');
+insert into O_EmpId (id, name) values (3,'Bulu');
+insert into O_EmpId (id, name) values (4,'Lily');
+
+insert into N_EmpId(id, name) values (1,'Aboli');
+insert into N_EmpId(id, name) values (3,'Bulu');
+
+
+declare
+newcid int;
+newname varchar(25);
+oldcid int;
+oldname varchar(25);
+cursor newcursor(n int) is select * from N_EmpId where id=n;
+cursor oldcursor is select * from O_EmpId;
+begin
+open oldcursor;
+loop
+fetch oldcursor into newcid, newname;
+exit when oldcursor%notfound;
+open newcursor(newcid);
+fetch newcursor into oldcid, oldname;
+if newcursor%notfound then
+insert into N_EmpId values(newcid,newname);
+end if;
+close newcursor;
+end loop;
+close oldcursor;
+end;
+//
+
+select * from O_EmpId;
+select * from N_EmpId;
+
+--------------------------------------
+A7
+-------------------------------------
+
+
+create table acustomer (cust_id int not null, name varchar(25) not null, total_purchase int default 0, primary key(cust_id));
+create table acategory (cust_id int not null, name varchar(25) not null, class varchar(25), primary key(cust_id));
+
+
+
+insert into acustomer values (1, "Aboli", 10001);
+insert into acustomer values (2, "Anu", 5001);
+insert into acustomer values (3, "Raj", 10001);
+insert into acustomer values (4, "Sara", 5001);
+insert into acustomer values (5, "Wallie", 2001);
+insert into acustomer values (6, "Neo", 2001);
+insert into acustomer values (7, "Raj", 2001);
+insert into acustomer values (8, "Sia", 10001);
+insert into acustomer values (9, "Alan", 10001);
+insert into acustomer values (10, "Mimi", 10001);
+
+
+
+
+
+delimiter $$
+create procedure proc_grade()
+     begin
+     declare name varchar(30);
+     declare b int default 0;
+     declare id int;
+     declare total int;
+     declare cursor_c1 cursor for select * from acustomer;
+     declare continue handler for not found set b=1;
+     open cursor_c1;
+     repeat
+     fetch cursor_c1 into id,name,total;
+     if not b then
+     if total>=10000 and total<=20000 then
+     insert into acategory values(id,name,'Platinum');
+     end if;
+     if total>=5000 and total<=9999 then
+     insert into acategory values(id,name,'Gold');
+     end if;
+     if total>=2000 and total<=4999 then
+     insert into acategory values(id,name,'Silver');
+     end if;
+     end if;
+     until b end repeat;
+     end;
+     $$
+
+delimiter ;
+call proc_grade();
+
+
+
+
+
+
+
+
+
+DECLARE 
+   SUBTYPE name IS char(20); 
+   SUBTYPE message IS varchar2(100); 
+   salutation name; 
+   greetings message; 
+BEGIN 
+   salutation := 'Reader '; 
+   greetings := 'Welcome to the World of PL/SQL'; 
+   dbms_output.put_line('Hello ' || salutation || greetings); 
+END; 
+/ 
+
+
+
+
+
+-------------------------------------------------
+------------------------------------------------
+Assmt 8
+-------------------------------------------------
+
+CREATE TABLE STUDENTA(
+   ROLLNO INT NOT NULL,
+   NAME VARCHAR(25) NOT NULL,
+   DOADM DATE,
+   BRANCH VARCHAR(5),
+   PERCENT INT,
+   STATUS VARCHAR(5)
+    );
+
+insert into studenta values(1, "Aboli", '2020-12-12', "Comp", 24, "S");
+insert into studenta values(2, "Anu", '2019-11-12', "SE", 91, "S");
+insert into studenta values(3, "Ana", '2020-10-12', "Etc", 98, "S");
+insert into studenta values(4, "Raj", '2020-12-12', "Comp", 92, "S");
+insert into studenta values(5, "Raina", '2020-10-12', "Comp", 54, "S");
+insert into studenta values(6, "Aish", '2020-12-10', "SE", 84, "S");
+insert into studenta values(7, "Kanu", '2018-12-12', "SE", 84, "S");
+insert into studenta values(9, "Kianu", '2020-10-12', "Etc", 94, "S");
+insert into studenta values(8, "Miru", '2002-12-12', "Etc", 4, "S");
+insert into studenta values(10, "Sloan", '2020-12-10', "Comp", 34, "S");
+
+CREATE TABLE ALUMNIA( NAME VARCHAR(25) NOT NULL, DOADM DATE, BRANCH VARCHAR(5), PERCENT INT, STATUS VARCHAR(20) );
+
+CREATE TABLE ALUMNIAs( NAME VARCHAR(25) NOT NULL, DOADM DATE, BRANCH VARCHAR(5), PERCENT INT, STATUS VARCHAR(20) );
+
+create trigger t11 after delete on STUDENTA for each row insert into ALUMNIA values(OLD.NAME, OLD.DOADM,OLD.BRANCH,OLD.PERCENT,"PASS OUT");
+
+create trigger t22 after update on STUDENTA for each row insert into ALUMNIA values(OLD.NAME, OLD.DOADM,OLD.BRANCH,OLD.PERCENT,"PASS OUT");
+
+
+
+create trigger t13 before delete on STUDENTA for each row insert into ALUMNIAs values(OLD.NAME, OLD.DOADM,OLD.BRANCH,OLD.PERCENT,"PASS OUT");
+
+create trigger t31 before update on STUDENTA for each row insert into ALUMNIAs values(OLD.NAME, OLD.DOADM,OLD.BRANCH,OLD.PERCENT,"PASS OUT");
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+CREATE TABLE login1 (
+    
+    name VARCHAR(100) NOT NULL,
+    username VARCHAR(255),
+    password VARCHAR(255),
+    day VARCHAR(10)
+);
+
+
+
+CREATE TABLE loginsuccessfull1 (
+    name VARCHAR(100) NOT NULL,
+    day VARCHAR(10)
+);
+
+
+DELIMITER $$
+
+CREATE TRIGGER after_members_insert1
+AFTER INSERT
+ON login1 FOR EACH ROW
+BEGIN
+    IF NEW.day != 'Sunday' and NEW.day != 'Saturday'THEN
+        INSERT INTO loginsuccessfull1(name,day) VALUES(new.name, new.day);
+    END IF;
+END$$
+
+DELIMITER ;
+
+
+
+
+------------------------------------------------------
+------------------------------------------------------
+
+MOCK TEST
+
+
+
+
+create table Customer(
+  AccNo int not null,
+  Cust_name varchar(25) not null,
+   Balance int,
+	city varchar(25) not null,
+       primary key(Cust_name) 
+  );
+
+insert into Customer values(1, "Aboli", 5000, "Pune");
+insert into Customer values(2, "Aditya", 3000, "Pune");
+insert into Customer values(3, "Tanuj", 10000, "Pune");
+insert into Customer values(4, "Anirudh", 6000, "Pune");
+insert into Customer values(5, "Apurav", 8000, "Pune");
+insert into Customer values(6, "Aryan", 3000, "Pune");
+insert into Customer values(7, "Atharva", 2000, "Pune");
+insert into Customer values(8, "Krishna", 3000, "Pune");
+insert into Customer values(9, "Shreya", 4000, "Pune");
+insert into Customer values(10, "Srushti", 4000, "Pune");
+
+create table Loan(
+  Loan_no int not null,
+  branch_name varchar(25) not null,
+  Amount int not null,
+       primary key(Loan_no) 
+  );
+
+insert into Loan values(1,"Swargate",2500);
+insert into Loan values(2,"Nal Stop",15000);
+insert into Loan values(3,"Swargate",51000);
+insert into Loan values(4,"Nal Stop",150000);
+insert into Loan values(5,"Swargate",10000);
+insert into Loan values(6,"Nal Stop",2000);
+insert into Loan values(7,"Swargate",100000);
+insert into Loan values(8,"Swargate",2500);
+insert into Loan values(9,"Nal Stop",1000);
+insert into Loan values(10,"Swargate",25000);
+
+
+create table Borrower(
+
+Cust_name varchar(25) not null,
+Loan_no int not null,
+ foreign key(Cust_name) references Customer(Cust_name) on delete cascade,
+ foreign key(Loan_no) references Loan(Loan_no) on delete cascade
+);
+
+insert into Borrower values("Aboli", 7);
+insert into Borrower values("Aditya", 1);
+insert into Borrower values("Tanuj", 8);
+insert into Borrower values("Anirudh", 6);
+insert into Borrower values("Apurav", 10);
+insert into Borrower values("Aryan", 2);
+insert into Borrower values("Atharva", 4);
+insert into Borrower values("Krishna", 9);
+insert into Borrower values("Shreya", 3);
+insert into Borrower values("Srushti", 5);
+
+create table borrower_category(
+
+Amount int,
+
+category varchar(25) not null
+
+
+);
+
+
+
+
+
+delimiter $$
+create procedure l(nam varchar(25))
+    begin
+     declare f_amt int;
+	declare no int;
+	declare cat varchar(25);
+     select Loan_no into no from Borrower where Cust_name=nam;
+ select Amount  into f_amt from Loan where Loan_no = no;
+
+     if (f_amt<=5000) then
+     set cat="Nominal";
+     insert into borrower_category values ( f_amt , cat);
+     elseif (f_amt > 5000 && f_amt <50000) then
+     set cat="Moderate";
+     insert into borrower_category values (f_amt , cat);
+      elseif (f_amt > 50000) then
+      set cat="Critical";
+      insert into borrower_category values (f_amt , cat);
+     end if;	
+     end;
+      $$
+delimiter ;
+
+
+create procedure loancalc()
+begin
+
+declare name varchar(20);
+declare no int;
+
+declare curs cursor for select Customer.Cust_name, Customer.AccNo from Customer left join Borrower on Customer.Cust_name = Borrower.Cust_name;
+
+	
+declare continue handler for not found set finished=1;
+
+
+open curs;
+
+for_loop : loop
+
+fetch curs into customer_name, account_num, bal;
+set bal_check = bal;
+
+if finished = 1 then
+leave for_loop;
+end if;
+
+if bal_check > 10000 then
+insert into loan_eligible values(customer_name, account_num);
+end if;
+
+end loop for_loop;
+close curs;
+
+
+end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create table borrower_category( 
+
+Cust_name varchar(25),
+AccNo int,
+Loan_no int,
+Amount int,
+category varchar(25) not null
+
+
+);
+
+
+
+
+
+delimiter $$
+create procedure calcl()
+    begin
+     declare f_amt int;
+	declare no int;
+	declare cat varchar(25);
+	declare ano int;
+	declare lno int;
+	declare bname varchar(25);
+
+     select Loan_no into no from Borrower where Cust_name=nam;
+ select Accno  into ano from Customer where Cust_name=nam;
+ select Amount  into f_amt  from Loan where Loan_no = no;
+
+     if (f_amt<=5000) then
+     set cat='Nominal';
+     insert into borrower_category values (nam, ano, no,  f_amt , cat);
+     elseif (f_amt > 5000 && f_amt <50000) then
+     set cat='Moderate';
+     insert into borrower_category values (nam, ano,no,  f_amt , cat);
+      elseif (f_amt > 50000) then
+      set cat="Critical';
+      insert into borrower_category values (nam,ano, no,  f_amt , cat);
+     end if;	
+     end;
+      $$
+delimiter ;
+
+
