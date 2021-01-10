@@ -71,12 +71,6 @@
                 </svg>
             </a>
 
-            <div class="search" data-search-path="Layouts.Search.html?q=">
-                <input placeholder="Search...">
-                <span class="search-icon">
-                    <i class="simple-icon-magnifier"></i>
-                </span>
-            </div>
         </div>
 
 
@@ -253,22 +247,27 @@
                     <div class="scroll">
                         <ul class="list-unstyled">
                             <li {% if request.path == '/dashboard'%}class="active" {% endif %}>
-                                <a href="#dashboard">
+                                <a href="{% url 'main:dashboard' %}">
                                     <i class="glyph-icon simple-icon-grid"></i>
                                     <span>Dashboard</span>
                                 </a>
                             </li>
-                            <li {% if request.path == "/management/doctor" or request.path == "/management/patient" or request.path == "/patient-info-user-admin" %}class="active" {% endif %}>
-                                <a href="#management">
-                                    <i class="glyph-icon simple-icon-people"></i>
-                                    <span>User Management</span>
+                            <li {% if request.path == '/appointment/requested-appoint'%}class="active" {% endif %}>
+                                <a href="{% url 'main:requested_appoint' %}">
+                                    <i class="glyph-icon simple-icon-calendar"></i>
+                                    <span>Appointment</span>
+                                </a>
+                            </li>
+                            <li {% if request.path == "/patient-info" or request.path == "/healthinfo/users" or request.path == "/patient-info-user" %}class = "active" {% endif %}>
+                                <a href="{% url 'main:user_info' %}">
+                                    <i class="glyph-icon simple-icon-heart"></i> Health Info
                                 </a>
                             </li>
                         </ul>
                     </div> 
                 </div>
             
-                <div class="sub-menu">
+                <!-- <div class="sub-menu">
                     <div class="scroll">
                         <ul class="list-unstyled" data-link="dashboard">
                             <li {% if request.path == "/dashboard" %}class="active" {% endif %}>
@@ -278,22 +277,43 @@
                             </li>
                         </ul>
 
-                        <ul class="list-unstyled" data-link="management">
-                            <li {% if request.path == "/management/doctor" %}class="active" {% endif %}>
-                                <a href="{% url 'main:doctor' %}">
-                                    <i class="iconsmind-Genius"></i> Doctors
+                        <ul class="list-unstyled" data-link="appointment">
+                            <li {% if request.path == "/appointment/book" %}class="active" {% endif %}>
+                                <a href="{% url 'main:book' %}">
+                                    <i class="simple-icon-rocket"></i> Book
                                 </a>
                             </li>
-                            <li {% if request.path == "/management/patient" or request.path == "/patient-info-user-admin" %}class="active" {% endif %}>
-                                <a href="{% url 'main:patient' %}">
-                                    <i class="iconsmind-Gentleman"></i>Patient
+                            <li {% if request.path == "/appointment/view" %}class="active" {% endif %}>
+                                <a href="{% url 'main:view' %}">
+                                    <i class="glyph-icon simple-icon-eyeglass"></i>View
+                                </a>
+                            </li>
+                            <li {% if request.path == "/appointment/history" %}class="active" {% endif %}>
+                                <a href="{% url 'main:history' %}">
+                                    <i class="glyph-icon simple-icon-notebook"></i> History
                                 </a>
                             </li>
                         </ul>
             
+                        <ul class="list-unstyled" data-link="layouts">
+                            <li {% if request.path == "/healthinfo/problems" %}class="active" {% endif %}>
+                                <a href="{% url 'main:problems' %}">
+                                    <i class="glyph-icon simple-icon-info"></i> Problems
+                                </a>
+                            </li>
+                            <li {% if request.path == "/healthinfo/medications" %}class="active" {% endif %}>
+                                <a href="{% url 'main:medications' %}">
+                                    <i class="glyph-icon simple-icon-diamond"></i> Medications
+                                </a>
+                            </li>
+                            <li {% if request.path == "/healthinfo/tests" %}class="active" {% endif %}>
+                                <a href="{% url 'main:tests' %}">
+                                    <i class="glyph-icon simple-icon-book-open"></i> Test Results
+                                </a>
+                            </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 
     </div>
     <main>
