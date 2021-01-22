@@ -1,0 +1,97 @@
+,Peer Review,Value,Lower Bound,Upper Bound,Age Range,Country,Location,Start Date,End Date,Published Date,Source
+0,Yes,1.12,1.04,1.18,Unspecified,China,unspecified,10-01-2020,23-01-2020,16-03-2020,Li R. et al.
+1,Yes,0.52,0.39,0.71,Unspecified,China,unspecified,24-01-2020,03-02-2020,16-03-2020,Li R. et al.
+2,Yes,0.35,0.27,0.5,Unspecified,China,unspecified,24-01-2020,08-02-2020,16-03-2020,Li R. et al.
+3,No,0.315,Unspecified,Unspecified,Unspecified,Brazil,Unspecified,26-02-2020,25-03-2020,30-03-2020,Crokidakis N. et al.
+4,No,0.34,Unspecified,Unspecified,Unspecified,Algeria,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+5,No,0.01,Unspecified,Unspecified,Unspecified,Algeria,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+6,No,0.22,Unspecified,Unspecified,Unspecified,Argentina,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+7,No,0.05,Unspecified,Unspecified,Unspecified,Argentina,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+8,No,0.44,Unspecified,Unspecified,Unspecified,Australia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+9,No,0.01,Unspecified,Unspecified,Unspecified,Australia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+10,No,0.57,Unspecified,Unspecified,Unspecified,Austria,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+11,No,0.01,Unspecified,Unspecified,Unspecified,Austria,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+12,No,0.69,Unspecified,Unspecified,Unspecified,Belgium,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+13,No,0.01,Unspecified,Unspecified,Unspecified,Belgium,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+18,No,0.49,Unspecified,Unspecified,Unspecified,Chile,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+19,No,0.04,Unspecified,Unspecified,Unspecified,Chile,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+20,No,0.26,Unspecified,Unspecified,Unspecified,Colombia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+21,No,0.01,Unspecified,Unspecified,Unspecified,Colombia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+22,No,0.45,Unspecified,Unspecified,Unspecified,Czechia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+23,No,0.01,Unspecified,Unspecified,Unspecified,Czechia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+24,No,0.22,Unspecified,Unspecified,Unspecified,Denmark,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+25,No,0.22,Unspecified,Unspecified,Unspecified,Denmark,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+26,No,0.26,Unspecified,Unspecified,Unspecified,Dominican Republic,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+27,No,0.1,Unspecified,Unspecified,Unspecified,Dominican Republic,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+28,No,0.32,Unspecified,Unspecified,Unspecified,Ecuador,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+29,No,0.01,Unspecified,Unspecified,Unspecified,Ecuador,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+30,No,0.22,Unspecified,Unspecified,Unspecified,Egypt,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+31,No,0.14,Unspecified,Unspecified,Unspecified,Egypt,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+32,No,0.18,Unspecified,Unspecified,Unspecified,Finland,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+33,No,0.18,Unspecified,Unspecified,Unspecified,Finland,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+34,No,0.64,Unspecified,Unspecified,Unspecified,France,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+35,No,0.01,Unspecified,Unspecified,Unspecified,France,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+38,No,0.18,Unspecified,Unspecified,Unspecified,Greece,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+39,No,0.01,Unspecified,Unspecified,Unspecified,Greece,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+42,No,0.27,Unspecified,Unspecified,Unspecified,Indonesia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+43,No,0.24,Unspecified,Unspecified,Unspecified,Indonesia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+44,No,0.39,Unspecified,Unspecified,Unspecified,Iran,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+45,No,0.01,Unspecified,Unspecified,Unspecified,Iran,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+46,No,0.35,Unspecified,Unspecified,Unspecified,Ireland,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+47,No,0.35,Unspecified,Unspecified,Unspecified,Ireland,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+48,No,0.61,Unspecified,Unspecified,Unspecified,Israel,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+49,No,0.02,Unspecified,Unspecified,Unspecified,Israel,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+50,No,0.55,Unspecified,Unspecified,Unspecified,Italy,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+51,No,0.01,Unspecified,Unspecified,Unspecified,Italy,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+52,No,0.16,Unspecified,Unspecified,Unspecified,Japan,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+53,No,0.32,Unspecified,Unspecified,Unspecified,Japan,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+54,No,0.2,Unspecified,Unspecified,Unspecified,Luxembourg,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+55,No,0.01,Unspecified,Unspecified,Unspecified,Luxembourg,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+56,No,0.34,Unspecified,Unspecified,Unspecified,Malaysia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+57,No,0.02,Unspecified,Unspecified,Unspecified,Malaysia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+58,No,0.31,Unspecified,Unspecified,Unspecified,Mexico,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+59,No,0.15,Unspecified,Unspecified,Unspecified,Mexico,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+60,No,0.52,Unspecified,Unspecified,Unspecified,Netherlands,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+61,No,0.01,Unspecified,Unspecified,Unspecified,Netherlands,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+62,No,0.32,Unspecified,Unspecified,Unspecified,Norway,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+63,No,0.02,Unspecified,Unspecified,Unspecified,Norway,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+64,No,0.2,Unspecified,Unspecified,Unspecified,Pakistan,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+65,No,0.04,Unspecified,Unspecified,Unspecified,Pakistan,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+66,No,0.22,Unspecified,Unspecified,Unspecified,Panama,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+67,No,0.01,Unspecified,Unspecified,Unspecified,Panama,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+68,No,0.31,Unspecified,Unspecified,Unspecified,Peru,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+69,No,0.31,Unspecified,Unspecified,Unspecified,Peru,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+70,No,0.31,Unspecified,Unspecified,Unspecified,Philippines,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+71,No,0.11,Unspecified,Unspecified,Unspecified,Philippines,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+72,No,0.28,Unspecified,Unspecified,Unspecified,Poland,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+73,No,0.01,Unspecified,Unspecified,Unspecified,Poland,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+74,No,0.5,Unspecified,Unspecified,Unspecified,Portugal,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+75,No,0.01,Unspecified,Unspecified,Unspecified,Portugal,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+76,No,0.06,Unspecified,Unspecified,Unspecified,Qatar,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+77,No,0.38,Unspecified,Unspecified,Unspecified,Qatar,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+78,No,0.59,Unspecified,Unspecified,Unspecified,Romania,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+79,No,0.03,Unspecified,Unspecified,Unspecified,Romania,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+80,No,0.47,Unspecified,Unspecified,Unspecified,Russia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+81,No,0.32,Unspecified,Unspecified,Unspecified,Russia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+82,No,0.24,Unspecified,Unspecified,Unspecified,Saudi Arabia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+83,No,0.24,Unspecified,Unspecified,Unspecified,Saudi Arabia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+84,No,0.29,Unspecified,Unspecified,Unspecified,Serbia,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+85,No,0.29,Unspecified,Unspecified,Unspecified,Serbia,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+86,No,0.26,Unspecified,Unspecified,Unspecified,Singapore,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+87,No,0.24,Unspecified,Unspecified,Unspecified,Singapore,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+88,No,0.15,Unspecified,Unspecified,Unspecified,South Africa,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+89,No,0.15,Unspecified,Unspecified,Unspecified,South Africa,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+90,No,0.6,Unspecified,Unspecified,Unspecified,Spain,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+91,No,0.01,Unspecified,Unspecified,Unspecified,Spain,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+94,No,0.53,Unspecified,Unspecified,Unspecified,Switzerland,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+95,No,0.01,Unspecified,Unspecified,Unspecified,Switzerland,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+96,No,0.45,Unspecified,Unspecified,Unspecified,Thailand,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+97,No,0.01,Unspecified,Unspecified,Unspecified,Thailand,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+98,No,0.49,Unspecified,Unspecified,Unspecified,Turkey,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+99,No,0.12,Unspecified,Unspecified,Unspecified,Turkey,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+100,No,0.44,Unspecified,Unspecified,Unspecified,United Arab Emirates,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+101,No,0.19,Unspecified,Unspecified,Unspecified,United Arab Emirates,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+102,No,0.76,Unspecified,Unspecified,Unspecified,United Kingdom,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+103,No,0.05,Unspecified,Unspecified,Unspecified,United Kingdom,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
+104,No,0.72,Unspecified,Unspecified,Unspecified,United States,Unspecified,31-12-2019,Unspecified,26-04-2020,Romero-Severson E. et al.
+105,No,0.02,Unspecified,Unspecified,Unspecified,United States,Unspecified,Unspecified,16-04-2020,26-04-2020,Romero-Severson E. et al.
