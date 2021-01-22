@@ -1,0 +1,28 @@
+,Peer Review,Value,Lower Bound,Upper Bound,Age Range,Country,Location,Start Date,End Date,Published Date,Source
+0,No,1.06,Unspecified,Unspecified,Unspecified,China,mainland China,17-12-2019,08-02-2020,08-02-2020,Hermanowicz et al.
+1,No,3.24,3.16,3.32,Unspecified,China,Wuhan,23-01-2020,13-02-2020,13-02-2020,Mizumoto K. et al.
+2,No,3.6,Unspecified,Unspecified,Unspecified,China,Wuhan,08-12-2019,22-01-2020,18-02-2020,Zhang B. et al.
+3,No,1.55,Unspecified,Unspecified,Unspecified,China,Wuhan,23-01-2020,13-02-2020,18-02-2020,Zhang B. et al.
+4,No,1.08,Unspecified,Unspecified,Unspecified,China,Wuhan,14-02-2020,Unspecified,18-02-2020,Zhang B. et al.
+5,No,3.4,Unspecified,Unspecified,Unspecified,China,Hubei except Wuhan,10-01-2020,22-01-2020,18-02-2020,Zhang B. et al.
+6,No,0.83,Unspecified,Unspecified,Unspecified,China,Hubei except Wuhan,23-01-2020,13-02-2020,18-02-2020,Zhang B. et al.
+7,No,0.59,Unspecified,Unspecified,Unspecified,China,Hubei except Wuhan,14-02-2020,Unspecified,18-02-2020,Zhang B. et al.
+8,No,3.3,Unspecified,Unspecified,Unspecified,China,excluding Hubei,23-01-2020,03-02-2020,18-02-2020,Zhang B. et al.
+9,No,0.63,Unspecified,Unspecified,Unspecified,China,excluding Hubei,04-02-2020,Unspecified,18-02-2020,Zhang B. et al.
+10,No,1.5,1.4,1.6,Unspecified,South Korea,Unspecified,20-01-2020,26-02-2020,02-03-2020,Shim E. et al.
+11,No,0.4,0.3,0.5,Unspecified,China,Shenzhen,14-01-2020,12-02-2020,04-03-2020,Qifang Bi et al.
+12,No,0.9,0.7,1,Unspecified,Singapore,,21-01-2020,05-03-2020,12-03-2020,Amna Tariq et al.
+13,No,1.88,1.68,2.02,Unspecified,Japan,Unspecified,14-01-2020,08-03-2020,16-03-2020,Sugishita Y. et al.
+14,Yes,2.38,2.04,2.77,Unspecified,China,unspecified,10-01-2020,23-01-2020,16-03-2020,Li R. et al.
+15,Yes,1.36,1.14,1.63,Unspecified,China,unspecified,24-01-2020,03-02-2020,16-03-2020,Li R. et al.
+16,Yes,0.99,0.76,1.33,Unspecified,China,unspecified,24-01-2020,08-02-2020,16-03-2020,Li R. et al.
+17,Yes,3.28,Unspecified,Unspecified,Unspecified,China,Hubei,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+18,Yes,1.93,Unspecified,Unspecified,Unspecified,China,excluding Hubei,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+19,Yes,3.02,Unspecified,Unspecified,Unspecified,China,Guangdong,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+20,Yes,2.41,Unspecified,Unspecified,Unspecified,China,Henan,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+21,Yes,3.1,Unspecified,Unspecified,Unspecified,China,Zhejiang,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+22,Yes,3.28,Unspecified,Unspecified,Unspecified,China,Hunan,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+23,Yes,1.7,Unspecified,Unspecified,Unspecified,China,Anhui,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+24,Yes,3.46,Unspecified,Unspecified,Unspecified,China,Jiangxi,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+25,Yes,1.75,Unspecified,Unspecified,Unspecified,China,Jiangsu,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
+26,Yes,1.36,Unspecified,Unspecified,Unspecified,China,Chongqing,21-01-2020,12-02-2020,10-04-2020,Maier BF. et al.
