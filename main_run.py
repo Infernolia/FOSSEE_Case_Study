@@ -33,9 +33,9 @@ def parse_args():
 def main():
     args = parse_args()
 
-    run_config = tf.compat.v1.ConfigProto()
+    run_config = tf.ConfigProto()
     run_config.gpu_options.allow_growth = True
-    with tf.compat.v1.Session(config=run_config) as sess:
+    with tf.Session(config=run_config) as sess:
         myModel = model.Model(sess, trainRoot=args.train_dir, testRoot=args.test_dir, rstRoot=args.rst_dir,
                               batchSize=args.batchSize)
 
