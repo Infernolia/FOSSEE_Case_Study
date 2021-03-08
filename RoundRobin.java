@@ -1,142 +1,86 @@
-import java.util.Arrays;
-import java.util.Scanner;
 
-public class RoundRobin {
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-	static Scanner sc = new Scanner(System.in);
-	
-
-	
-	
-	
-	static void  RoundRobinSch(Process proc[], int n, int quantum)
-	{
-		int wt[] = new int[n];
-		int tat[] = new int[n];
-		int CT[] = new int[n];
-		int rem_bt[] = new int[n];
-		
-		int totwt = 0, tot_tat = 0;
-		
-		
-		
-		Arrays.sort(proc, new sortByArrival());
-		
-		
-		for(int i =0 ; i < n; i++)
-		{
-			rem_bt[i] = proc[i].bt;
-		}
-		
-		
-		int t = 0;
-		
-		System.out.println("Processes " + " Arrival Time " +  " Burst time " + " Waiting time " + " Turn around time" + "Completion Time");
-			
-		int complete = 0;
-		while(complete != n)
-		{
-			
-			for(int i = 0; i < n; i++)
-			{
-				if(rem_bt[i] > 0 && proc[i].at <= t)
-				{
-					
-					
-					if(rem_bt[i] > quantum)
-					{
-						t += quantum;
-						rem_bt[i] -= quantum;
-						
-						CT[i] = t;
-						
-						tat[i] = CT[i] - proc[i].at;
-						wt[i] = tat[i] - proc[i].bt;
-						
-						System.out.println(" " + proc[i].pid + "\t\t" + proc[i].at + "\t\t"
-				                  + proc[i].bt + "\t\t " + wt[i] 
-				                  + "\t\t" + tat[i] + "\t\t" + CT[i]);
-						
-					}
-					else // now process will finish 
-					{
-						t += rem_bt[i];
-						
-						rem_bt[i] = 0;
-						CT[i] = t;
-						
-						tat[i] = CT[i] - proc[i].at;
-						wt[i] = tat[i] - proc[i].bt;
-						
-						/*
-						 *   OR 
-						 *   tat[i] = CT[i];
-						 *   wat[i] = tat[i] - proc[i].bt - proc[i].at
-						 * 
-						 * */
-						
-						complete += 1;
-						
-						System.out.println(" " + proc[i].pid + "\t\t" + proc[i].at + "\t\t"
-				                  + proc[i].bt + "\t\t " + wt[i] 
-				                  + "\t\t" + tat[i] + "\t\t" + CT[i]); 
-						
-					}
-				}
-			}
-			
-		}
-	
-		
-		
-		
-		
-		
-		
-		
-		for (int i = 0; i < n; i++) 
-		{ 
-			 totwt = totwt + wt[i]; 
-			 tot_tat = tot_tat + tat[i]; 
-			 /*System.out.println(" " + proc[i].pid + "\t\t" + proc[i].at + "\t\t"
-			                  + proc[i].bt + "\t\t " + wt[i] 
-			                  + "\t\t" + tat[i] + "\t\t" + CT[i]); */
-		}
-
-		
-		System.out.println("Average waiting time = " + 
-		               (float)totwt / (float)n); 
-		System.out.println("Average turn around time = " + 
-		                (float)tot_tat / (float)n);		
-	}
-	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		
-		int quantum = 2;
-		int n;
-		System.out.println("Enter number of processes:");
-		 n = sc.nextInt();
-		
-		
-		Process proc[] = new Process[n];
-		 
-		for(int i = 0; i < n; i++)
-		{
-			System.out.println("Enter Arrival time for process " + i + 1);
-			int at = sc.nextInt();
-			
-			
-			System.out.println("Enter Burst time for process " + i + 1);
-			int bt = sc.nextInt();
-			
-			proc[i] = new Process(i+1,at, bt);
-			
-		}
-		
-		RoundRobinSch(proc, n, quantum);
-		
-	}
-
+public class RoundRobin extends CPUScheduler
+{
+    @Override
+    public void process()
+    {
+        Collections.sort(this.getRows(), (Object o1, Object o2) -> {
+            if (((Row) o1).getArrivalTime() == ((Row) o2).getArrivalTime())
+            {
+                return 0;
+            }
+            else if (((Row) o1).getArrivalTime() < ((Row) o2).getArrivalTime())
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }
+        });
+        
+        List<Row> rows = Utility.deepCopy(this.getRows());
+        int time = rows.get(0).getArrivalTime();
+        int timeQuantum = this.getTimeQuantum();
+        
+        while (!rows.isEmpty())
+        {
+            Row row = rows.get(0);
+            int bt = (row.getBurstTime() < timeQuantum ? row.getBurstTime() : timeQuantum);
+            this.getTimeline().add(new Event(row.getProcessName(), time, time + bt));
+            time += bt;
+            rows.remove(0);
+            
+            if (row.getBurstTime() > timeQuantum)
+            {
+                row.setBurstTime(row.getBurstTime() - timeQuantum);
+                
+                for (int i = 0; i < rows.size(); i++)
+                {
+                    if (rows.get(i).getArrivalTime() > time)
+                    {
+                        rows.add(i, row);
+                        break;
+                    }
+                    else if (i == rows.size() - 1)
+                    {
+                        rows.add(row);
+                        break;
+                    }
+                }
+            }
+        }
+        
+        Map map = new HashMap();
+        
+        for (Row row : this.getRows())
+        {
+            map.clear();
+            
+            for (Event event : this.getTimeline())
+            {
+                if (event.getProcessName().equals(row.getProcessName()))
+                {
+                    if (map.containsKey(event.getProcessName()))
+                    {
+                        int w = event.getStartTime() - (int) map.get(event.getProcessName());
+                        row.setWaitingTime(row.getWaitingTime() + w);
+                    }
+                    else
+                    {
+                        row.setWaitingTime(event.getStartTime() - row.getArrivalTime());
+                    }
+                    
+                    map.put(event.getProcessName(), event.getFinishTime());
+                }
+            }
+            
+            row.setTurnaroundTime(row.getWaitingTime() + row.getBurstTime());
+        }
+    }
 }
