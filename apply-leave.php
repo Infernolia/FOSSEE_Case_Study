@@ -16,6 +16,7 @@ $todate=$_POST['todate'];
 $description=$_POST['description'];  
 $status=0;
 $isread=0;
+
 if($fromdate > $todate){
                 $error=" ToDate should be greater than FromDate ";
            }
@@ -29,15 +30,50 @@ $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':isread',$isread,PDO::PARAM_STR);
 $query->bindParam(':empid',$empid,PDO::PARAM_STR);
 $query->execute();
+
+
 $lastInsertId = $dbh->lastInsertId();
+
 if($lastInsertId)
 {
-$msg="Leave applied successfully";
+   $msg="Leave applied successfully";
+    if($leavetype=="Medical Leave test"){
+        $sql="update tblemployees set medleaves=medleaves-1 where id=:empid";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':empid',$empid,PDO::PARAM_STR);
+        $query->execute();
+    }
+    elseif($leavetype=="Casual Leave"){
+        $sql="update tblemployees set casualLeaves=casualLeaves-1 where id=:empid";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':empid',$empid,PDO::PARAM_STR);
+        $query->execute();
+    }
+    elseif($leavetype=="Restricted Holiday(RH)"){
+        $sql="update tblemployees set resLeaves=resLeaves-1 where id=:empid";
+        $query = $dbh->prepare($sql);
+        $query->bindParam(':empid',$empid,PDO::PARAM_STR);
+        $query->execute();
+    }
 }
+
 else 
 {
 $error="Something went wrong. Please try again";
 }
+
+
+
+// if($leavetype=='Medical Leave test'){
+// $value=$medicalleaves-1;
+// console.log($value);
+// $sql="UPDATE tblemployess SET medleaves=:value WHERE id=:empid";
+// $query = $dbh->prepare($sql);
+// $query->bindParam(':value',$value,PDO::PARAM_STR);
+// $query->bindParam(':empid',$empid,PDO::PARAM_STR);
+// $query->execute();
+// }
+
 
 }
 
@@ -54,7 +90,7 @@ $error="Something went wrong. Please try again";
         <meta charset="UTF-8">
         <meta name="description" content="Responsive Admin Dashboard Template" />
         <meta name="keywords" content="admin,dashboard" />
-        <meta name="author" content="Steelcoders" />
+        <meta name="author" content="abolikeshavtanusri" />
         
         <!-- Styles -->
         <link type="text/css" rel="stylesheet" href="assets/plugins/materialize/css/materialize.min.css"/>
