@@ -8,3 +8,5 @@ Potential Research Questions:<BR>
 2) Time series correlation of number of cases and the number of strains sampled.<BR>
 3) Finding the severity of each strain and variant(eg. delta, alpha etc) by using deaths/cases.<BR>
 
+  
+ All data belongs to: https://www.gisaid.org/
