@@ -14,3 +14,14 @@ Potential Research Questions:<BR>
   
   
  Interesting visualizations on : https://nextstrain.org/
+
+  
+  Order of running codes:
+  
+  1. data_cleaning_first.R
+  2. data_cleaning.R
+  3. exploratory_data_analysis.R
+  4. visualization.R
+  5. timeseries.R
+  6. timeseries_ksmooth.R
+  7. 29september.R
