@@ -20,8 +20,7 @@ Potential Research Questions:<BR>
   
   1. data_cleaning_first.R
   2. data_cleaning.R
-  3. exploratory_data_analysis.R
-  4. visualization.R
-  5. timeseries.R
-  6. timeseries_ksmooth.R
-  7. 29september.R
+  3. visualization.R
+  4. timeseries.R
+  5. timeseries_ksmooth.R
+  6. 29september.R
