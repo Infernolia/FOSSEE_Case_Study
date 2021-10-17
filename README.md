@@ -18,9 +18,3 @@ Potential Research Questions:<BR>
   
   Order of running codes:
   
-  1. data_cleaning_first.R
-  2. data_cleaning.R
-  3. visualization.R
-  4. timeseries.R
-  5. timeseries_ksmooth.R
-  6. 29september.R
